@@ -10,7 +10,7 @@ const htmlWebpackPlugin = require('html-webpack-plugin')
 
 const copyWebpackPlugin = require('copy-webpack-plugin')
 
-const rules = require('webpack.rules.conf.js')
+const rules = require('./webpack.rules.conf.js')
 
 var getHtmlConfig = function (name, chunks) {
     return {

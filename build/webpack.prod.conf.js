@@ -3,11 +3,11 @@ const webpack = require('webpack')
 const merge = require('webpack-merge')
 
 // 清除目录等
-const cleanWebpackPlugin = require("clean-webpack-plugin");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const extractTextPlugin = require("extract-text-webpack-plugin");
-const webpackConfigBase = require('./webpack.base.conf');
+const webpackConfigBase = require('./webpack.base.config');
 
 const webpackConfigProd = {
     mode:'production',
@@ -19,11 +19,7 @@ const webpackConfigProd = {
     devtool:'cheap-module-eval-source-map',
     plugins:[
         //删除dist目录
-        new cleanWebpackPlugin(['dist'], {
-            root: path.resolve(__dirname, '../'), //根目录
-            verbose: true, //开启在控制台输出信息
-            dry: false,
-        }),
+        new CleanWebpackPlugin(),
         new webpack.DefinePlugin({
             'process.env.BASE_URL': '\"' + process.env.BASE_URL + '\"'
         }),
