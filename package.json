@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "build": "cross-env webpack --config build/webpack.prod.conf.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run build --m test",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.dev.conf.js ",
+    "local": "npm run dev --m local",
+    "server": "live-server ./ --port=8888"
   },
   "author": "",
   "license": "ISC",
@@ -20,11 +23,17 @@
     "copy-webpack-plugin": "^5.0.3",
     "cross-env": "^5.2.0",
     "css-loader": "^3.0.0",
+    "exports-loader": "^0.7.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^4.0.0",
     "glob": "^7.1.4",
+    "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "live-server": "^1.2.1",
+    "node-sass": "^4.12.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "postcss-loader": "^3.0.0",
+    "postcss-plugin-px2rem": "^0.8.1",
     "purify-css": "^1.2.5",
     "purifycss-webpack": "^0.7.0",
     "sass-loader": "^7.1.0",
@@ -35,5 +44,8 @@
     "webpack-cli": "^3.3.5",
     "webpack-dev-server": "^3.7.2",
     "webpack-merge": "^4.2.1"
+  },
+  "dependencies": {
+    "raw-loader": "^3.0.0"
   }
 }

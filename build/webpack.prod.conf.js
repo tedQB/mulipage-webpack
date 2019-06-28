@@ -37,7 +37,7 @@ const webpackConfigProd = {
         new UglifyJSPlugin({
             uglifyOptions: {
                 compress: {
-                    warnings: false,
+                    //warnings: false,
                     drop_debugger: false,
                     drop_console: true
                 }

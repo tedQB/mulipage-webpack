@@ -3,11 +3,11 @@ const webpack = require('webpack')
 const glob = require('glob')
 
 require('./env-config')
-
+//消除冗余的css
 const purifyCssWebpack = require('purifycss-webpack')
-
+// html模板
 const htmlWebpackPlugin = require('html-webpack-plugin')
-
+//静态资源输出
 const copyWebpackPlugin = require('copy-webpack-plugin')
 
 const rules = require('./webpack.rules.conf.js')
